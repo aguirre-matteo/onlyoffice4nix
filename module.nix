@@ -33,7 +33,7 @@ in
   options.programs.onlyoffice = {
     enable = mkEnableOption "distrobox";
 
-    package = mkPackageOption pkgs "onlyoffice-desktopeditors" { };
+    package = mkPackageOption pkgs "onlyoffice-desktopeditors" { nullable = true; };
 
     settings = mkOption {
       type = with types; attrsOf (either bool str);
@@ -55,7 +55,7 @@ in
   };
 
   config = mkIf cfg.enable {
-    home.packages = [ cfg.package ];
+    home.packages = mkIf (cfg.package != null) [ cfg.package ];
 
     xdg.configFile."onlyoffice/DesktopEditors.conf".source = pkgs.writeText "DesktopEditors.conf" (
       getFinalConfig cfg.settings
