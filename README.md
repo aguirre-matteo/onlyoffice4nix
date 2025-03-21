@@ -6,7 +6,7 @@ This repository offers a Home-Manager module for configurating
 your [Onlyoffice's](https://www.onlyoffice.com/) config declaratively!
 
 > [!NOTE]
-> This module has been merged on Home-Manager's unstable branch. This repo will.be available until next stable release (25.5)
+> This module has been merged on Home-Manager's unstable branch, so this repo will be available until next stable release (25.5)
 
 # Installation
 
